@@ -21,7 +21,7 @@ module.exports = {
       const userLogged = await User.findOne({ user }).select('+password');
 
       if(!userLogged) {
-        return res.status(400).send({ error: 'Usuário inexistente' })
+        return res.status(400).send({ error: 'Usuário inexistente' });
       }
 
       if (!await bcrypt.compare(password, userLogged.password)) {
