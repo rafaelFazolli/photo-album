@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
 
   if(!authHeader) {
     return res.status(401).send({ error: 'Sem token' });
-  }
+  };
 
   const parts = authHeader.split(' ');
 

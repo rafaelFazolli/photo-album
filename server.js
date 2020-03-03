@@ -12,4 +12,4 @@ mongoose.connect('mongodb://localhost:27017/photoalbum', { useNewUrlParser: true
 requireDir('./src/models');
 
 app.use('/api', require('./src/routers'));
-app.listen(3001);
+app.listen(process.env.PORT || 3001);
