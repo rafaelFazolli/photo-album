@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 const cors = require('cors');
+const routers = require('./src/routers');
+
 require('dotenv').config();
 
 const app = express();
@@ -12,5 +14,5 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopol
 
 requireDir('./src/models');
 
-app.use('/api', requireDir('./src/routers'));
+app.use('/', routers);
 app.listen(process.env.PORT || 3001);
