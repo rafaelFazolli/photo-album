@@ -13,6 +13,6 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopol
 
 requireDir('./src/models');
 
-app.use('/api', require('./src/routers'));
+// app.use('/api', require('./src/routers'));
 app.listen(process.env.PORT || 3001);
 
